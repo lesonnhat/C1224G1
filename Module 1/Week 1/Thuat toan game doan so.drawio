@@ -1,0 +1,94 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36" version="26.0.2">
+  <diagram name="Page-1" id="NNkLbLhKxq_P1A8AAQdl">
+    <mxGraphModel dx="1134" dy="654" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="O2RCixkP9uMjEyyrN9v7-1" value="Begin" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" vertex="1" parent="1">
+          <mxGeometry x="470" y="40" width="130" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="O2RCixkP9uMjEyyrN9v7-2" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="O2RCixkP9uMjEyyrN9v7-1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="520" y="150" as="sourcePoint" />
+            <mxPoint x="535" y="140" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="O2RCixkP9uMjEyyrN9v7-3" value="Input N ngẫu nhiên từ 0 - 9" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="425" y="140" width="220" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="O2RCixkP9uMjEyyrN9v7-5" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="534.5" y="200" as="sourcePoint" />
+            <mxPoint x="534.5" y="240" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="O2RCixkP9uMjEyyrN9v7-6" value="Input M" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="420" y="240" width="220" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="O2RCixkP9uMjEyyrN9v7-7" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="534.5" y="300" as="sourcePoint" />
+            <mxPoint x="534.5" y="340" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="O2RCixkP9uMjEyyrN9v7-13" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="O2RCixkP9uMjEyyrN9v7-8" target="O2RCixkP9uMjEyyrN9v7-12">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="343" y="375" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="O2RCixkP9uMjEyyrN9v7-22" value="YES" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="O2RCixkP9uMjEyyrN9v7-13">
+          <mxGeometry x="-0.3985" y="1" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="O2RCixkP9uMjEyyrN9v7-15" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="O2RCixkP9uMjEyyrN9v7-8" target="O2RCixkP9uMjEyyrN9v7-14">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="727" y="375" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="O2RCixkP9uMjEyyrN9v7-23" value="NO" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="O2RCixkP9uMjEyyrN9v7-15">
+          <mxGeometry x="-0.4841" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="O2RCixkP9uMjEyyrN9v7-8" value="N == M" style="rhombus;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="452.5" y="340" width="165" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="O2RCixkP9uMjEyyrN9v7-19" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="O2RCixkP9uMjEyyrN9v7-12" target="O2RCixkP9uMjEyyrN9v7-17">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="340" y="570" />
+              <mxPoint x="535" y="570" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="O2RCixkP9uMjEyyrN9v7-12" value="Output &quot;Đúng&quot;" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="232.5" y="460" width="220" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="O2RCixkP9uMjEyyrN9v7-21" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" target="O2RCixkP9uMjEyyrN9v7-17">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="659.9999999999998" y="600" as="targetPoint" />
+            <mxPoint x="737.5294117647059" y="520" as="sourcePoint" />
+            <Array as="points">
+              <mxPoint x="738" y="570" />
+              <mxPoint x="535" y="570" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="O2RCixkP9uMjEyyrN9v7-14" value="Output &quot;Sai&quot;" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="617.5" y="460" width="220" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="O2RCixkP9uMjEyyrN9v7-17" value="End" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" vertex="1" parent="1">
+          <mxGeometry x="470" y="600" width="130" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="O2RCixkP9uMjEyyrN9v7-24" value="&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;Pseudo-code&lt;/h1&gt;&lt;p&gt;&lt;span style=&quot;background-color: transparent;&quot;&gt;Begin&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&amp;nbsp; N là số được sinh số ngẫu nhiên trong khoảng 0-9&lt;/p&gt;&lt;p&gt;&amp;nbsp; Nhập vào M&lt;/p&gt;&lt;p&gt;&amp;nbsp; IF (N==M)&lt;/p&gt;&lt;p&gt;&amp;nbsp; &amp;nbsp; Display &quot;Dự đoán đúng&quot;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;&lt;/p&gt;&lt;p&gt;&amp;nbsp; ELSE&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;&lt;/p&gt;&lt;p&gt;&amp;nbsp; &amp;nbsp; Display &quot;Dự đoán sai&quot;&amp;nbsp;&lt;/p&gt;&lt;p&gt;End&lt;/p&gt;" style="text;html=1;whiteSpace=wrap;overflow=hidden;rounded=0;fillColor=default;" vertex="1" parent="1">
+          <mxGeometry y="80" width="210" height="300" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
