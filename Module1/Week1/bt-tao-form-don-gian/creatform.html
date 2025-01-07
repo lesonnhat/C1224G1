@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tạo form đơn giản</title>
+</head>
+<body>
+    <form action="#" name="form_dongian" method="get" style="background-color: #d5feff">
+        <table>
+            <tr>
+                <th colspan="2" style="background-color: orangered; color: white; text-align: center">SỞ THÍCH CỦA BẠN</th>
+            </tr>
+            <tr>
+                <td style="color: #0d28aa">Họ và tên</td>
+                <td><input type="text" name="fullname"></td>
+            </tr>
+            <tr>
+                <td style="color: #0d28aa">Email</td>
+                <td><input type="text" name="email"></td>
+            </tr>
+            <tr>
+                <td style="color: #0d28aa">Sở thích</td>
+                <td>
+                    <label style="color: orange"><input type="checkbox" name="hobby" value="thethao">Thể thao</label>
+                    <label style="color: orange"><input type="checkbox" name="hobby" value="amnhac"> Âm nhạc</label>
+                    <label style="color: orange"><input type="checkbox" name="hobby" value="docsach"> Đọc sách</label>
+                    <label style="color: orange"><input type="checkbox" name="hobby" value="luotweb"> Lướt web</label>
+                    <label style="color: orange"><input type="checkbox" name="hobby" value="choigame"> Chơi game</label>
+                    <label style="color: orange"><input type="checkbox" name="hobby" value="dienanh"> Điện ảnh</label>
+                    <label style="color: orange"><input type="checkbox" name="hobby" value="dulich"> Du lịch</label>
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                    <input type="submit" name="submit" value="Gửi thông tin">
+                    <input type="reset" name="reset" value="Nhập lại">
+                </td>
+            </tr>
+        </table>
+    </form>
+    <br>
+    <hr>
+    <br>
+    <form action="#" name="form_dangky" method="get" style="background-color: #fffda9">
+        <table>
+            <tr>
+                <th colspan="2" style="color: #0534ff; background-color: #d4fdd6">ĐĂNG KÝ HỌC VIÊN</th>
+            </tr>
+            <tr>
+                <td style="color: #0d28aa">Họ và tên</td>
+                <td><input type="text" name="fullname"></td>
+            </tr>
+            <tr>
+                <td style="color: #0d28aa">Ngày sinh</td>
+                <td><input type="text" name="birthday"></td>
+            </tr>
+            <tr>
+                <td style="color: #0d28aa">Giới tính</td>
+                <td>
+                    <label><input type="radio" name="gender" value="male">Nam</label>
+                    <label><input type="radio" name="gender" value="female">Nữ</label>
+                </td>
+            </tr>
+            <tr>
+                <td style="color: #0d28aa">Địa chỉ</td>
+                <td><textarea cols="50" rows="4"></textarea></td>
+            </tr>
+            <tr>
+                <td style="color: #0d28aa">Lớp</td>
+                <td>
+                    <select name="lop">
+                        <option value="chonlop">-Chọn lớp-</option>
+                        <option value="10d">10D</option>
+                        <option value="11d">11D</option>
+                        <option value="12d">12D</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td style="color: #0d28aa">Email</td>
+                <td>
+                    <input type="email" name="email">
+                </td>
+            </tr>
+            <tr>
+                <td style="color: #0d28aa">Điện thoại</td>
+                <td>
+                    <input type="text" name="phone">
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                    <input type="submit" name="bt_dangky" value="Đăng ký">
+                    <input type="reset" name="bt_nhaplai" value="Nhập lại">
+                </td>
+            </tr>
+        </table>
+    </form>
+
+</body>
+</html>
