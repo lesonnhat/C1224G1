@@ -3,23 +3,47 @@
 <head>
     <meta charset="UTF-8">
     <title>Làm quen JavaScript</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tsparticles/confetti@3.0.3/tsparticles.confetti.bundle.min.js"></script>
 </head>
 <body>
     <h1>A Web Page</h1>
+
+    <!--3 kiểu nhúng JavaScript, không có tạo file riêng biệt-->
+
     <p id="demo">A Paragraph</p>
-
-<!--3 kiểu nhúng JavaScript, không có tạo file riêng biệt-->
-
     <button type="button" onclick="myFunction()">Try it</button>
     <button onclick="alert('Hello World!')">Click me</button>
     <button type="button" onclick="showMessage();">Click Me!</button>
+
+    <br><br>
+
+    <select id="mySelect" onchange="dosomething()">
+        <option value="audi">Audi</option>
+        <option value="volvo">Volvo</option>
+        <option value="mercedes">Mercedes</option>
+        <option value="bmw">BMW</option>
+    </select>
 </body>
 <script>
+    function dosomething() {
+        var selectValue = document.getElementById("mySelect").value;
+        alert(selectValue);
+    }
+
     function myFunction() {
         document.getElementById("demo").innerHTML = "Paragraph changed";
     }
     function showMessage(){
         alert('Xin chào!');
     }
+
+// Mã ở dưới là lấy từ trang https://confetti.js.org/
+
+    confetti({
+        particleCount: 100,
+        spread: 70,
+        origin: { y: 0.6 },
+    });
 </script>
+
 </html>
