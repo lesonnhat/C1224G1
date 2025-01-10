@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tính chỉ số cân nặng của cơ thể</title>
+    <style>
+        button {
+            background-color: green;
+            color: white;
+            border: 1px solid green;
+        }
+        button:hover {
+            background-color: black;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <p>Nhập vào chiều cao, cân nặng của bạn: </p>
+    <label><input type="number" id="chieucao" placeholder="Chiều cao (cm)"/></label>
+    <label><input type="number" id="cannang" placeholder="Cân nặng (kg)"/></label>
+    <button type="button" onclick="tinhToan()">Tính</button>
+    <p id="result"></p>
+<script src="main.js"></script>
+</body>
+</html>
