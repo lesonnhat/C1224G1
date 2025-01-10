@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .input-view {
+            height: 30px;
+        }
+        .equal {
+            background-color: blue;
+            color: white;
+            border: none;"
+        }
+        .equal:hover {
+            background-color: mediumblue;
+        }
+        table {
+            font-family: arial, sans-serif;
+            border-radius: 5px;
+            border-spacing: 5px;
+            table-layout: fixed;
+            padding: 10px 0px 0px 0px;
+            width: 170px;
+        }
+        td {
+            border-radius: 5px;
+            padding: 5px 0px 5px 0px;
+            text-align: center;
+            background-color: #eeeeee;
+            border: 1px solid #777777;
+        }
+        td:hover {
+            background-color: #dddddd;
+        }
+    </style>
+</head>
+<body>
+    <input type="text" id="display" class="input-view">
+    <table>
+        <tr>
+            <td onclick="appendToDisplay('1')">1</td>
+            <td onclick="appendToDisplay('2')">2</td>
+            <td onclick="appendToDisplay('3')">3</td>
+            <td onclick="appendToDisplay('+')">+</td>
+        </tr>
+        <tr>
+            <td onclick="appendToDisplay('4')">4</td>
+            <td onclick="appendToDisplay('5')">5</td>
+            <td onclick="appendToDisplay('6')">6</td>
+            <td onclick="appendToDisplay('-')">-</td>
+        </tr>
+        <tr>
+            <td onclick="appendToDisplay('7')">7</td>
+            <td onclick="appendToDisplay('8')">8</td>
+            <td onclick="appendToDisplay('9')">9</td>
+            <td onclick="appendToDisplay('*')">*</td>
+        </tr>
+        <tr>
+            <td onclick="clearDisplay()">AC</td>
+            <td onclick="appendToDisplay('0')">0</td>
+            <td class="equal" onclick="calculateResult()">=</td>
+            <td onclick="appendToDisplay('/')">/</td>
+        </tr>
+    </table>
+<script src="main.js"></script>
+</body>
+</html>
