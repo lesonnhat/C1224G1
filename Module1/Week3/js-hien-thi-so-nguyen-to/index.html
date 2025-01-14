@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hiển thị các số nguyên tố đầu tiên</title>
+</head>
+<body>
+<script>
+    function isPrime(num) {
+        if (num < 2) return false;
+        for (let i = 2; i <= Math.sqrt(num); i++) {
+            if (num % i === 0) return false;
+        }
+        return true;
+    }
+    const n = parseInt(prompt('Nhập n số nguyên tố đầu tiên: ')); // Số lượng số nguyên tố cần hiển thị
+    let count = 0;
+    let num = 2; // Bắt đầu từ số nguyên tố đầu tiên
+    while (count < n) {
+        if (isPrime(num)) {
+            document.write(num + '<br>');
+            count++;
+        }
+        num++;
+    }
+</script>
+</body>
+</html>
