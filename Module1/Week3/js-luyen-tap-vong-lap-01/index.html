@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Luyện tập vòng lặp 01</title>
+</head>
+<body>
+<script>
+    // // Bài 1
+    // for (let i = 1; i <= 100; i++) {
+    //     if (i === 99) {
+    //         alert("Đã hoàn thành");
+    //     }
+    // }
+
+    // // Bài 2
+    // let nhiet = parseInt(prompt('Nhập vào nhiệt độ hiện tại: ', ''));
+    // if (20 <= nhiet && nhiet <= 100) {
+    //     alert('Nhiệt độ hiện tại là: ' + nhiet + '°C. Mọi thứ đều bình thường.');
+    // }
+    // else if (nhiet > 100) {
+    //     alert('Vui lòng giảm nhiệt độ xuống');
+    // }
+    // else {
+    //     alert('Vui lòng tăng nhiệt độ lên');
+    // }
+
+    // // Bài 3
+    // // Khởi tạo mảng để lưu các số Fibonacci
+    // const fibonacci = [1, 2];
+    // // Tính toán 18 số tiếp theo
+    // for (let i = 2; i < 20; i++) {
+    //     fibonacci[i] = fibonacci[i - 1] + fibonacci[i - 2];
+    // }
+    // // Hiển thị kết quả
+    // alert("20 số đầu tiên trong dãy Fibonacci: " + fibonacci.join(', '));
+
+    // // Bài 4
+    // const fibonacci = [1, 2];
+    // for (let i = 2; i < 20; i++) {
+    //     fibonacci[i] = fibonacci[i - 1] + fibonacci[i - 2];
+    //     if (fibonacci[i] % 5 === 0) {
+    //         alert('Số đầu tiên trong dãy fibonacci chia hết cho 5 là: ' + fibonacci[i]);
+    //         break;
+    //     }
+    // }
+
+    // // Bài 5
+    // const fibonacci = [1, 2];
+    // let sum = 2;
+    // for (let i = 2; i < 20; i++) {
+    //     fibonacci[i] = fibonacci[i - 1] + fibonacci[i - 2];
+    //     sum += fibonacci[i];
+    // }
+    // alert("Tổng của 20 số đầu tiên trong dãy fibonacci: " + sum);
+
+    // // Bài 6
+    // let sum = 0; // Biến để lưu tổng
+    // let count = 0; // Đếm số lượng số chia hết cho 7
+    // let number = 1; // Khởi tạo số tự nhiên bắt đầu từ 1
+    //
+    // // Tìm 30 số chia hết cho 7
+    // while (count < 30) {
+    //     if (number % 7 === 0) {
+    //         sum += number; // Cộng vào tổng
+    //         count++; // Tăng số đếm
+    //     }
+    //     number++; // Tiến đến số tiếp theo
+    // }
+    //
+    // // Hiển thị kết quả
+    // alert("Tổng của 30 số chia hết cho 7 đầu tiên là: " + sum);
+
+    // // Bài 7
+    // let result = '';
+    // for (let i = 1; i <= 100; i++) {
+    //     if (i % 3 === 0 && i % 5 === 0) {
+    //         result += 'FizzBuzz<br>';
+    //     }
+    //     else if (i % 3 === 0) {
+    //         result += 'Fizz<br>';
+    //     }
+    //     else if (i % 5 === 0) {
+    //         result += 'Buzz<br>';
+    //     }
+    //     else {
+    //         result += i + '<br>';
+    //     }
+    // }
+    // document.write(result);
+
+    // Bài 8
+    let button = "<button onclick=hienThi()>Bắt đầu</button>";
+    document.write(button);
+    function hienThi() {
+        let min = parseInt(prompt("Nhập số nhỏ nhất bạn muốn đoán:"));
+        let min = parseInt(prompt("Nhập số nhỏ nhất bạn muốn đoán:"));
+        let max = parseInt(prompt("Nhập số lớn nhất bạn muốn đoán:"));
+
+        // Kiểm tra khoảng
+        if (isNaN(min) || isNaN(max) || min >= max) {
+            alert("Vui lòng nhập khoảng số hợp lệ!");
+            return;
+        }
+
+        // Chọn số ngẫu nhiên
+        const randomNumber = Math.floor(Math.random() * (max - min + 1)) + min;
+
+        let guess;
+        do {
+            guess = parseInt(prompt(`Nhập số bạn đoán (trong khoảng từ ${min} đến ${max}):`));
+
+            // Kiểm tra giá trị người dùng nhập
+            if (isNaN(guess)) {
+                alert("Vui lòng nhập một số hợp lệ!");
+            } else if (guess < randomNumber) {
+                alert("Số bạn đoán quá nhỏ! Hãy thử lại.");
+            } else if (guess > randomNumber) {
+                alert("Số bạn đoán quá lớn! Hãy thử lại.");
+            } else {
+                alert("Chúc mừng! Bạn đã đoán đúng số: " + randomNumber);
+            }
+
+        } while (guess !== randomNumber);
+    }
+</script>
+</body>
+</html>
