@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ứng dụng vui DoYouLoveMe</title>
+    <style>
+        h1 {
+            text-align: center;
+        }
+
+        .buttons {
+            table-layout: fixed;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<h1>Do you love me?</h1>
+<div class="buttons">
+    <button type="button" id="bt-yes" onclick="clickYES()">YES</button>
+    <button type="button" id="bt-no" onmouseover="changePosition()">NO</button>
+</div>
+<script>
+    function clickYES() {
+        alert('❤️❤️️️️❤️️️️️️️');
+    }
+
+    function changePosition() {
+        console.log('aaa');
+        const btnNo = document.getElementById('bt-no');
+        btnNo.style.position = 'absolute';
+        btnNo.style.top = ((Math.random() * window.innerHeight) + 1) - 20 + 'px';
+        btnNo.style.left = ((Math.random() * window.innerWidth) + 1) - 20 + 'px';
+    }
+</script>
+</body>
+</html>
