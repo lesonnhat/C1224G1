@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ứng dụng good-fast-cheap</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f0f0;
+      text-align: center;
+      padding: 50px;
+    }
+    .slider {
+      -webkit-appearance: none;
+      width: 100%;
+      height: 15px;
+      background: #ddd;
+      border-radius: 5px;
+      outline: none;
+      opacity: 0.7;
+      transition: opacity .2s;
+    }
+    .slider:hover {
+      opacity: 1;
+    }
+    .label {
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+    .result {
+      margin-top: 20px;
+      font-size: 18px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+<h1>Chọn các thuộc tính</h1>
+
+<div>
+  <div class="label">GOOD</div>
+  <input type="range" min="0" max="1" step="1" id="good" class="slider" onchange="updateResult()">
+</div>
+<div>
+  <div class="label">CHEAP</div>
+  <input type="range" min="0" max="1" step="1" id="cheap" class="slider" onchange="updateResult()">
+</div>
+<div>
+  <div class="label">FAST</div>
+  <input type="range" min="0" max="1" step="1" id="fast" class="slider" onchange="updateResult()">
+</div>
+
+<div class="result" id="result"></div>
+
+<script>
+  function updateResult() {
+    let isGood = document.getElementById("good").value == 1;
+    let isCheap = document.getElementById("cheap").value == 1;
+    let isFast = document.getElementById("fast").value == 1;
+    let result = '';
+
+    if (isGood && isCheap && isFast) {
+      result = "Bạn có một sản phẩm tuyệt vời!";
+    } else if (isGood && isCheap) {
+      result = "Sản phẩm tốt và rẻ!";
+    } else if (isGood && isFast) {
+      result = "Sản phẩm tốt và nhanh!";
+    } else if (isCheap && isFast) {
+      result = "Sản phẩm rẻ và nhanh, nhưng có thể không tốt!";
+    } else if (isGood) {
+      result = "Sản phẩm tốt nhưng có thể đắt!";
+    } else if (isCheap) {
+      result = "Sản phẩm rẻ nhưng có thể không tốt!";
+    } else if (isFast) {
+      result = "Sản phẩm nhanh nhưng có thể không tốt và đắt!";
+    } else {
+      result = "Không có thuộc tính nào được chọn.";
+    }
+
+    document.getElementById("result").innerText = result;
+  }
+</script>
+</script>
+</body>
+</html>
