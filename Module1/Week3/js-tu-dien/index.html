@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Từ điển</title>
+</head>
+<body>
+<script>
+    // let value = prompt('Nhập vào từ tiếng Anh: ');
+    // let arrayEn = ["red", "blue", "green", "yellow", "orange", "pink"];
+    // let arrayVi = ["màu đỏ", "màu xanh dương", "màu xanh lá cây", "màu vàng", "màu cam", "màu hồng"];
+    // let result = "";
+    // let index = -1;
+    //
+    // for (let i = 0; i < arrayEn.length; i++) {
+    //     if (value === arrayEn[i]) {
+    //         for (let j = 0; j < arrayVi.length; j++) {
+    //             if (j === i) {
+    //                 index = j;
+    //             }
+    //         }
+    //     }
+    // }
+    // if (index > -1) {
+    //     result += arrayVi[index];
+    // }
+    // else {
+    //     result = 'Không tìm thấy giá trị';
+    // }
+    // document.write(result);
+
+    let value = prompt('Nhập vào từ tiếng Anh: ');
+    let result = 'Không tìm thấy giá trị';
+    let arrayEn = ["red", "blue", "green", "yellow", "orange", "pink"];
+    let arrayVi = ["màu đỏ", "màu xanh dương", "màu xanh lá cây", "màu vàng", "màu cam", "màu hồng"];
+
+    for (let i = 0; i < arrayEn.length; i++) {
+        if (value === arrayEn[i]) {
+            result = arrayEn[i] + ' - ' + arrayVi[i];
+        }
+    }
+    document.write(result);
+</script>
+</body>
+</html>
