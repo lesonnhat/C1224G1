@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Luyện tập mảng 01</title>
+</head>
+<body>
+<script>
+  // Bài 1:
+  // let array = [1, 3, 5, 7, 8, 9, 13, 15, 16, 19];
+  // let result = [];
+  // for (let i = 0; i < array.length; i++) {
+  //     if (array[i] >= 10) {
+  //         result.push(array[i]);
+  //     }
+  // }
+  // if (result.length > 0) {
+  //     document.write(result.join(", ")); // Nếu có số >= 10, hiển thị chúng
+  // } else {
+  //     document.write("Không có số nào lớn hơn hoặc bằng 10."); // Nếu không có số nào
+  // }
+
+  // Bài 2:
+  // let array = [1, 23, 5, 7, 8, 39, 13, 15, 46, 19];
+  // let max = array[0];
+  // let result = "";
+  // for (let i = 0; i < array.length; i++) {
+  //     if ( array[i] > max) {
+  //         max = array[i];
+  //     }
+  //     result = 'Số lớn nhất trong mảng là ' + max + ' nằm ở vị trí ' + i;
+  // }
+  // document.write(result);
+
+  // Bài 3:
+  // let array = [1, 23, 5, 7, 8, 39, 13, 15, 46, 19];
+  // let tong = 0;
+  // let trungBinh = 0;
+  // for (let i = 0; i < array.length; i++) {
+  //     tong += array[i];
+  // }
+  // trungBinh = tong / (array.length - 1);
+  // document.write('Giá trị trung bình của mảng là: ' + trungBinh);
+
+  // Bài 4:
+  // let array = [1, 23, 5, 7, 8, 39, 13, 15, 46, 19];
+  // array.reverse();
+  // document.write(array);
+
+  // Bài 5:
+  // let array = [1, -23, 5, 7, -8, 39, 13, -15, -46, 19];
+  // let result = [];
+  // for (let i = 0; i < array.length; i++) {
+  //     if (array[i] < 0) {
+  //         result.push(array[i]);
+  //     }
+  // }
+  // document.write('Các số nguyên âm trong mảng là: ' + result);
+
+  // Bài 6:
+  // let array = [1, -23, 5, 7, -8, 39, 13, -15, -46, 19];
+  // let V = 5;
+  // let result = "V is not in the array";
+  // for (let i = 0; i < array.length; i++) {
+  //     if (array[i] === V) {
+  //         result = 'V is in the array';
+  //     }
+  // }
+  // document.write(result);
+
+  // Bài 7:
+  // let array = [1, -23, 5, 7, -8, 39, 13, -15, -46, 19];
+  // let V = 5;
+  // for (let i = 0; i < array.length; i++) {
+  //     if (array[i] === V) {
+  //         array.splice(i, 1);
+  //         array.push(0);
+  //     }
+  // }
+  // document.write(array);
+
+  // Bài 8:
+  // let array = [1, -23, 5, 7, -8, 39, 13, -15, -46, 19];
+  // array.sort(function(a, b) {
+  //     return a - b;
+  // })
+  // document.write(array);
+
+  // Bài 9:
+  let a = [1, -23, 5, 7, -8, 39, 13, -15, -46, 19];
+  let b = [2, -24, 6, 8, -7, 40, 14, -14, -45, 20];
+  let c = new Array(20);
+
+  c = a.concat(b);
+  document.write(c);
+</script>
+</body>
+</html>
