@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Luyện tập mảng 02</title>
+</head>
+<body>
+<script>
+    // Bài 1:
+    // let a = [
+    //     [1, 2, 1, 24],
+    //     [8, 11, 9, 4],
+    //     [7, 0, 7, 27],
+    //     [7, 4, 28, 14],
+    //     [3, 10, 26, 7]
+    // ];
+    // let result = "";
+    // for (let i in a) {
+    //     result += "row " + i + "<br>";
+    //     for (let j in a[i]) {
+    //         result += " " + a[i][j] + "<br>";
+    //     }
+    // }
+    // document.write(result);
+
+    // Bài 2:
+    // let array = [ 'c', 's', 'c', '2', '6', '1' ];
+    // array.reverse();
+    // document.write(array);
+
+    // Bài 3 + Bài 4:
+    // let array = ['c', 's', 'c', '2', '6', '1'];
+    // let result = [];
+    // for (let i = 0; i < array.length; i++) {
+    //     if (!isNaN(array[i])) {
+    //         result.push(array[i]);
+    //     }
+    // }
+    // document.write('Ký tự số trong mảng là: ' + result);
+
+    // Bài 5:
+    let a = ['c', 's', 'c', '2', '6', '1'];
+    let b = ['c', 's', 'c', '2', '6', '1'];
+    result = "2 hàm không giống nhau";
+    for (let i = 0; i < a.length; i++) {
+        if (a[i] !== b[i]) {
+            result = "2 hàm không giống nhau";
+            break;
+        }
+        else {
+            result = "2 hàm giống nhau";
+        }
+    }
+    document.write(result);
+
+    // Bài 6:
+    // let array = ['-', 's', '-', '-', '6', '1'];
+    // for (let i = 0; i < array.length; i++) {
+    //     if (array[i] === '-') {
+    //         array[i] = '_'
+    //     }
+    // }
+    // document.write(array);
+</script>
+</body>
+</html>
