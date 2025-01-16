@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Game Tic Tac Toe</title>
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial, sans-serif;
+        }
+        table {
+            margin: 20px auto;
+            border-collapse: collapse;
+        }
+        td {
+            width: 50px;
+            height: 50px;
+            border: 1px solid #000;
+            text-align: center;
+            font-size: 24px;
+            cursor: pointer;
+        }
+        td:hover {
+            background-color: #f0f0f0;
+        }
+        #message {
+            margin-top: 20px;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+<h1>Game Caro</h1>
+<table id="board"></table>
+<div id="message"></div>
+
+<script>
+    const boardSize = 3;
+    const board = Array.from(Array(boardSize), () => Array(boardSize).fill('.'));
+    let currentPlayer = 'X';
+    const boardElement = document.getElementById('board');
+    const messageElement = document.getElementById('message');
+
+    function createBoard() {
+        for (let i = 0; i < boardSize; i++) {
+            const row = document.createElement('tr');
+            for (let j = 0; j < boardSize; j++) {
+                const cell = document.createElement('td');
+                cell.textContent = board[i][j];
+                cell.addEventListener('click', () => handleCellClick(i, j));
+                row.appendChild(cell);
+            }
+            boardElement.appendChild(row);
+        }
+    }
+
+    function handleCellClick(i, j) {
+        if (board[i][j] !== '.') return; // Nếu ô đã được chọn, không làm gì cả
+
+        board[i][j] = currentPlayer;
+        renderBoard();
+        if (checkWinner(currentPlayer)) {
+            messageElement.textContent = `${currentPlayer} thắng!`;
+            return;
+        }
+        currentPlayer = currentPlayer === 'X' ? 'O' : 'X'; // Chuyển lượt
+    }
+
+    function renderBoard() {
+        const cells = boardElement.getElementsByTagName('td');
+        for (let i = 0; i < boardSize; i++) {
+            for (let j = 0; j < boardSize; j++) {
+                cells[i * boardSize + j].textContent = board[i][j];
+            }
+        }
+    }
+
+    function checkWinner(player) {
+        // Kiểm tra hàng ngang, dọc và chéo
+        for (let i = 0; i < boardSize; i++) {
+            if (
+                (board[i][0] === player && board[i][1] === player && board[i][2] === player) || // Hàng ngang
+                (board[0][i] === player && board[1][i] === player && board[2][i] === player)    // Hàng dọc
+            ) {
+                return true;
+            }
+        }
+        // Kiểm tra chéo
+        if ((board[0][0] === player && board[1][1] === player && board[2][2] === player) ||
+            (board[0][2] === player && board[1][1] === player && board[2][0] === player)) {
+            return true;
+        }
+        return false;
+    }
+
+    createBoard();
+</script>
+</body>
+</html>
