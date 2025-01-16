@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ứng dụng vui Faking Textarea on Typing</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        #output {
+            border: 1px solid #000;
+            width: 300px;
+            height: 100px;
+            margin: 20px auto;
+            font-size: 24px;
+            line-height: 100px; /* Giữ cho văn bản ở giữa khung */
+        }
+    </style>
+</head>
+<body>
+<h1>Type anything slowly</h1>
+<div id="output"></div>
+<script>
+  const fixedText = "Bạn là đồ ngốc."; // Dòng chữ cố định
+  let index = 0; // Chỉ số để theo dõi vị trí ký tự trong fixedText
+
+  document.addEventListener('keydown', function() {
+    if (index < fixedText.length) {
+      // Hiển thị ký tự tiếp theo
+      document.getElementById('output').innerText += fixedText[index];
+      index++; // Tăng chỉ số
+    }
+  });
+</script>
+</body>
+</html>
