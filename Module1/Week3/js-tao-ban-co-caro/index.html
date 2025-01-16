@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Caro Game Simple</title>
+</head>
+<body>
+    <table id="board">
+        <!-- Bàn cờ sẽ được tạo ra ở đây -->
+    </table>
+    <button onclick="changeValue()">Change Value</button>
+<script>
+
+    // let board = [];
+    // for (let i = 0; i < 5; i++) {
+    //     let row = [];
+    //     for (let j = 0; j < 5; j++) {
+    //         row.push(0);
+    //     }
+    //     board.push(row);
+    // }
+    // document.write(board);
+
+    // Khởi tạo bàn cờ 5x5 với giá trị mặc định là 0
+    let board = Array(5).fill().map(() => Array(5).fill(0));
+
+    // Hàm để hiển thị bàn cờ
+    function displayBoard() {
+        const table = document.getElementById('board');
+        table.innerHTML = ''; // Xóa nội dung cũ
+        for (let i = 0; i < board.length; i++) {
+            let row = table.insertRow();
+            for (let j = 0; j < board[i].length; j++) {
+                let cell = row.insertCell();
+                cell.innerText = board[i][j];
+            }
+        }
+    }
+
+    // Hàm thay đổi giá trị
+    function changeValue() {
+        let row = prompt("Nhập vị trí hàng (0-4):");
+        let col = prompt("Nhập vị trí cột (0-4):");
+        let value = prompt("Nhập giá trị mới:");
+
+        // Kiểm tra và cập nhật giá trị
+        if (row >= 0 && row < 5 && col >= 0 && col < 5) {
+            board[row][col] = value;
+            displayBoard();
+        } else {
+            alert("Vị trí không hợp lệ! Hãy nhập lại.");
+        }
+    }
+
+    // Hiển thị bàn cờ ban đầu
+    displayBoard();
+
+    // let banCaro;
+    // banCaro = "<table width='130px'>";
+    // for (let i = 0; i < 5; i++) {
+    //     banCaro += "<tr>";
+    //     for (let j = 0; j < 5; j++) {
+    //         banCaro += "<td>" + ' 0 ' + "</td>";
+    //     }
+    //     banCaro += "</tr>";
+    // }
+    // banCaro += "</table>";
+    //
+    // let btnChange = "<button id='btnChange'>Change Value</button>";
+    // document.write(banCaro + btnChange);
+
+</script>
+</body>
+</html>
