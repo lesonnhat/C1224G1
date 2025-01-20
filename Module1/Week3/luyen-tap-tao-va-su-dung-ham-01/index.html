@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Luyện tập tạo và sử dụng hàm 01</title>
+</head>
+<body>
+<!-- Bài 1 -->
+<!--<button type="button" onclick="alertMessage()">Click here</button>-->
+
+<script>
+    // Bài 1:
+    // function alertMessage() {
+    //     return alert("Xin chào");
+    // }
+
+    // Bài 2:
+    // function So(number) {
+    //     return "Kết quả mới = " + (number + 1);
+    // }
+    // let value = parseInt(prompt("Nhập vào một số: "));
+    // let result = So(value);
+    // document.write(result);
+
+    // Bài 3:
+    // function sosanhSum(a, b) {
+    //     if (a > b) {
+    //         return a + " lớn hơn " + b;
+    //     }
+    //     else {
+    //         return "Tổng hai số = " + (a + b);
+    //     }
+    // }
+    // let result = sosanhSum(4, 5);
+    // document.write(result);
+
+    // // Bài 4:
+    // function addNumbers() {
+    //     firstNum = 4;
+    //     secondNum = 8;
+    //     result = firstNum + secondNum;
+    //     return result;
+    // }
+    // result = 0;
+    // // alert(result); // Giá trị của biến result trước lời gọi hàm
+    // result = addNumbers();
+    // alert(result); // Giá trị của biến result sau lời gọi hàm
+
+    // Bài 5:
+    let stars1 = ["Polaris", "Aldebaran", "Deneb", "Vega", "Altair", "Dubhe", "Regulus"];
+    let stars2 = ["Ursa Minor", "Tarurus", "Cygnus", "Lyra", "Aquila", "Ursa Major", "Leo"];
+
+    // let value = prompt("Nhập vào tên sao");
+    // let result = "Không tìm thấy sao";
+    // for (let i = 0; i < stars1.length; i++) {
+    //     if (stars1[i] === value) {
+    //         result = 'Sao ' + stars1[i] + ' thuộc chòm sao ' + stars2[i];
+    //     }
+    // }
+    // document.write(result);
+
+    function timSao(sao1, sao2) {
+        let value = prompt("Nhập vào tên sao: ");
+        let result = "Không tìm thấy sao";
+        for (let i = 0; i < sao1.length; i++) {
+            if (sao1[i] === value) {
+                result = "Sao " + sao1[i] + " thuộc chòm sao " + sao2[i];
+            }
+        }
+        return result;
+    }
+    let display = timSao(stars1, stars2);
+    document.write(display);
+</script>
+</body>
+</html>
