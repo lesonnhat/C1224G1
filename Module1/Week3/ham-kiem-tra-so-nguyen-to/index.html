@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hàm kiểm tra số nguyên tố</title>
+</head>
+<body>
+<script>
+    function isPrime(number) {
+        if (number < 2  || number > 10000) {
+            return "Vui lòng nhập một số nguyên dương (từ 2-10000)";
+        }
+        for (let i = 2; i <= Math.sqrt(number); i++) {
+            if (number % i === 0) {
+                return number + " không phải số nguyên tố";
+            }
+        }
+        return number + " là số nguyên tố";
+    }
+    value = parseInt(prompt("Nhập vào một số nguyên dương (từ 2-10000)"));
+    let result = isPrime(value);
+    document.write(result);
+</script>
+</body>
+</html>
