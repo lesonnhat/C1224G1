@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Luyện tập tạo và sử dụng hàm 02</title>
+</head>
+<body>
+<script>
+    // // Bài 1:
+    // function binhPhuong(a) {
+    //     return a * a;
+    // }
+    // binhPhuong(5);
+    // document.write(binhPhuong(5));
+
+    // Bài 2:
+    // function dienTichTron(r) {
+    //     return Math.PI * r * r;
+    // }
+    // function chuViTron(r) {
+    //     return Math.PI * r * 2;
+    // }
+    // let dtTron = dienTichTron(5).toFixed(3);
+    // let cvTron = chuViTron(5).toFixed(3);
+    // document.write("Diện tích hình tròn: " + dtTron + "<br>" + "Chu vi hình tròn: " + cvTron);
+
+    // Bài 3:
+    // function tinhGiaiThua(x) {
+    //     if (x < 0) {
+    //     return "Không hợp lệ";
+    //     }
+    //     if (x === 0 || x === 1) {
+    //     return "Giai thừa bằng 1";
+    //     }
+    //     let result = 1;
+    //     for (let i = 2; i <= x; i++) {
+    //         result *= i;
+    //     }
+    //     return result;
+    // }
+    // let tinhGT = tinhGiaiThua(8);
+    // document.write("Giai thừa bằng " + tinhGT);
+
+    // Bài 4:
+    // function isNumber(n) {
+    //     return !isNaN(n); // Trả về true nếu n là số
+    // }
+    //
+    // let value = prompt("Nhập vào đây: "); // Nhận giá trị từ người dùng
+    // let result = isNumber(value); // Kiểm tra giá trị
+    //
+    // if (result) {
+    //     document.write(value + " là số");
+    // } else {
+    //     document.write(value + " không phải là số");
+    // }
+
+    // Bài 5:
+    // function timMin(a, b, c) {
+    //     let min = a;
+    //     if (b < min) {
+    //         if (c < min) {
+    //             return c + " là số nhỏ nhất";
+    //         }
+    //         else {
+    //             return b + " là số nhỏ nhất";
+    //         }
+    //     }
+    //     else if (b === min) {
+    //         if (c < min) {
+    //             return c + " là số nhỏ nhất";
+    //         }
+    //         else {
+    //             return b + " là số nhỏ nhất";
+    //         }
+    //     }
+    //     else {
+    //         if (c < min) {
+    //             return c + " là số nhỏ nhất";
+    //         }
+    //         else {
+    //             return a + " là số nhỏ nhất";
+    //         }
+    //     }
+    // }
+    // let x = prompt("Nhập số đầu tiên: ");
+    // let y = prompt("Nhập số thứ hai: ");
+    // let z = prompt("Nhập số thứ ba: ");
+    // timMin(x, y, z);
+    // document.write(timMin(x, y, z));
+
+    // Bài 6:
+    // function isNguyenDuong(x) {
+    //     if (x > 0) {
+    //         return true;
+    //     }
+    //     else {
+    //         return false;
+    //     }
+    // }
+    // isNguyenDuong(5);
+    // document.write(isNguyenDuong(5));
+
+    // Bài 7:
+    // function chuyenDoi(a, b) {
+    //     let x = a;
+    //     a = b;
+    //     b = x;
+    //     return "a = " + a + " và b = " + b;
+    // }
+    // chuyenDoi(1, 2);
+    // document.write(chuyenDoi(1, 2));
+
+    // Bài 8
+    // function daoMang(array) {
+    //     let j = array.length - 1;
+    //     for (let i = 0; i < j; i++) {
+    //             let x = array[i];
+    //             array[i] = array[j];
+    //             array[j] = x;
+    //             j--;
+    //     }
+    //     return array;
+    // }
+    // let arrays = [1, 3, 5, 7, 9];
+    // document.write(daoMang(arrays));
+
+    // Bài 9
+    function kiemTra(array, a) {
+        let count = 0;
+        for (let i = 0; i < array.length; i++) {
+            if (a === array[i]) {
+                count += 1;
+            }
+        }
+        if (count > 0) {
+            return count;
+        }
+        else {
+            return -1;
+        }
+    }
+    arrays = ["A", "B", "C", "A", "D", "E", "A"];
+    value = "A";
+    let result = kiemTra(arrays, value);
+    document.write("Số lần xuất hiện của ký tự " + value + " là " + result);
+</script>
+</body>
+</html>
