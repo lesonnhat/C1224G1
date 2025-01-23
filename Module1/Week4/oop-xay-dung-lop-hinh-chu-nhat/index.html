@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Xây dựng lớp mô tả hình chữ nhật</title>
+</head>
+<body>
+<canvas id="demoCanvas" width="400" height="400"></canvas>
+<script>
+    class HinhChuNhat {
+        constructor(width, height) {
+            this.width = width;
+            this.height = height;
+        }
+        getWidth() {
+            return this.width;
+        }
+        getHeight() {
+            return this.height;
+        }
+        setWidth(width) {
+            this.width = width;
+        }
+        setHeight(height) {
+            this.height = height;
+        }
+        getDienTich() {
+            return this.width * this.height;
+        }
+        getChuVi() {
+            return (this.width + this.height) * 2;
+        }
+    }
+    let hinhCN = new HinhChuNhat(250,150);
+
+    hinhCN.setWidth(350);
+
+    let width = hinhCN.getWidth();
+    let height = hinhCN.getHeight();
+
+    document.write("<br>" + "Diện tích: " + hinhCN.getDienTich() + "<br>"
+        + "Chu vi: " + hinhCN.getChuVi());
+
+    let canvas = document.getElementById("demoCanvas");
+    let ctx = canvas.getContext("2d");
+    ctx.fillStyle = "#eee666";
+    ctx.fillRect(0, 0, width, height);
+
+    let ctx2 = canvas.getContext("2d");
+    ctx2.fillStyle = "#444444";
+    ctx2.fillRect(0, 180, width, height);
+</script>
+</body>
+</html>
