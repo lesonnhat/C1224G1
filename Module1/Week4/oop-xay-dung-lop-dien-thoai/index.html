@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Xây dựng lớp mô tả điện thoại</title>
+<!--    <style>-->
+<!--        body {-->
+<!--            font-family: Arial, sans-serif;-->
+<!--            margin: 20px;-->
+<!--        }-->
+<!--        #output {-->
+<!--            margin-top: 20px;-->
+<!--            white-space: pre-wrap; /* Giữ định dạng cho văn bản */-->
+<!--        }-->
+<!--    </style>-->
+</head>
+<body>
+<h1>Ví dụ về lớp Mobile</h1>
+<div id="output"></div>
+<script>
+    // class Mobile {
+    //     constructor(name, battery) {
+    //         this.name = name;
+    //         this.battery = battery;
+    //         this.isMobileOn = false;
+    //     }
+    //     setBattery(battery) {
+    //         this.battery = battery;
+    //     }
+    //     getBattery() {
+    //         return this.battery;
+    //     }
+    //     checkStatus() {
+    //         return this.isMobileOn ? this.name + " đang bật. Trạng thái pin = " + this.battery : this.name + "Điện thoại đang tắt";
+    //     }
+    //     mobileOn() {
+    //         this.isMobileOn = true;
+    //     }
+    //     mobileOff() {
+    //         this.isMobileOn = false;
+    //     }
+    //     batteryCharging(charging) {
+    //         for (let i = 0; i < charging; i++) {
+    //             this.battery++;
+    //             if (this.battery > 100) {
+    //                 return "Pin đầy 100%";
+    //             }
+    //         }
+    //     }
+    //     draftMessage(message) {
+    //         if (!this.isMobileOn) {
+    //             return this.showError();
+    //         }
+    //         this.message = message;
+    //         return this.name + "Đang soạn tin nhắn" + this.message;
+    //         this.battery--;
+    //     }
+    //     sendMessage(message) {
+    //         if (!this.isMobileOn) {
+    //             return this.showError();
+    //         }
+    //         if (this.message === "") {
+    //             return "Không có tin nhắn nào để gửi";
+    //         }
+    //         return this.name + " đã gửi tin nhắn: " + this.message;
+    //         this.battery--;
+    //     }
+    //     receiveMessage(message) {
+    //         if (!this.isMobileOn) {
+    //             return this.showError();
+    //         }
+    //         return this.name + "đã nhận tin nhắn: " + this.message;
+    //         this.battery--;
+    //     }
+    //     showError() {
+    //         return "Chức năng không hoạt động. Vui lòng bật máy";
+    //     }
+    //     disPlay(message) {
+    //         let output = document.getElementById("output");
+    //         output.innerHTML += message;
+    //     }
+    // }
+    //
+    // let iPhone = new Mobile();
+    // let samSung = new Mobile();
+    //
+    // iPhone.mobileOn();
+    // samSung.mobileOn();
+    //
+    // iPhone.setBattery(69);
+    // samSung.setBattery(34);
+    //
+    // iPhone.draftMessage("Chào Sam Sung. Mình là iPhone đây");
+    // iPhone.sendMessage("Chào Sam Sung. Mình là iPhone đây");
+    // samSung.receiveMessage("Chào Sam Sung. Mình là iPhone đây");
+    // document.getElementById("output").innerHTML = display;
+
+
+    class Mobile {
+        constructor(name) {
+            this.name = name; // Tên điện thoại
+            this.battery = 100; // Trạng thái pin tối đa 100
+            this.isPoweredOn = false; // Trạng thái điện thoại (bật/tắt)
+            this.draftingMessage = ""; // Tin nhắn đang soạn thảo
+            this.inbox = []; // Hộp thư đến
+            this.sentMessages = []; // Tin nhắn đã gửi
+        }
+
+        // Kiểm tra trạng thái điện thoại
+        checkStatus() {
+            return this.isPoweredOn ? "Điện thoại đang bật" : "Điện thoại đang tắt";
+        }
+
+        // Bật điện thoại
+        powerOn() {
+            this.isPoweredOn = true;
+            this.display(this.name + " đã được bật.");
+        }
+
+        // Tắt điện thoại
+        powerOff() {
+            this.isPoweredOn = false;
+            this.display(this.name + " đã được tắt.");
+        }
+
+        // Sạc pin
+        chargeBattery(amount) {
+            this.battery = Math.min(this.battery + amount, 100);
+            this.display(this.name + " đã sạc pin. Pin hiện tại: " + this.battery);
+        }
+
+        // Soạn tin nhắn
+        draftMessage(message) {
+            if (!this.isPoweredOn) return this.showError();
+            this.draftingMessage = message;
+            this.battery -= 1;
+            this.display("Đang soạn tin nhắn: " + this.draftingMessage);
+        }
+
+        // Gửi tin nhắn tới một chiếc Mobile khác
+        sendMessage(receiver) {
+            if (!this.isPoweredOn) return this.showError();
+            if (this.draftingMessage === "") {
+                this.display("Không có tin nhắn nào để gửi.");
+                return;
+            }
+            receiver.receiveMessage(this.draftingMessage);
+            this.sentMessages.push(this.draftingMessage);
+            this.draftingMessage = ""; // Xóa tin nhắn sau khi gửi
+            this.battery -= 1;
+            this.display("Tin nhắn đã gửi tới " + receiver.name);
+        }
+
+        // Nhận tin nhắn từ một chiếc Mobile khác
+        receiveMessage(message) {
+            this.inbox.push(message);
+            this.display(this.name + " đã nhận tin nhắn: " + message);
+        }
+
+        // Xem tin nhắn trong hộp thư đến
+        viewInbox() {
+            if (!this.isPoweredOn) return this.showError();
+            this.display("Tin nhắn trong hộp thư đến của " + this.name + ": " + this.inbox.join(", "));
+            this.battery -= 1;
+        }
+
+        // Xem tin nhắn đã gửi
+        viewSentMessages() {
+            if (!this.isPoweredOn) return this.showError();
+            this.display("Tin nhắn đã gửi từ " + this.name + ": " + this.sentMessages.join(", "));
+            this.battery -= 1;
+        }
+
+        // Hiển thị lỗi khi điện thoại tắt
+        showError() {
+            this.display("Chức năng không hoạt động. Vui lòng bật điện thoại.");
+        }
+
+        // Phương thức hiển thị kết quả lên màn hình
+        display(message) {
+            const outputDiv = document.getElementById("output");
+            outputDiv.innerText += message + "\n";
+        }
+    }
+
+    // Tạo các đối tượng
+    let nokia = new Mobile("Nokia");
+    let iphone = new Mobile("iPhone");
+
+    // Sử dụng các chức năng
+    nokia.powerOn(); // Bật Nokia
+    nokia.draftMessage("Chào iPhone!"); // Soạn tin nhắn
+    nokia.sendMessage(iphone); // Gửi tin nhắn cho iPhone
+
+    iphone.powerOn(); // Bật iPhone
+    iphone.viewInbox(); // Xem tin nhắn trong hộp thư đến
+</script>
+</body>
+</html>
