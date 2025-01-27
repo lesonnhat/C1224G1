@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title><!DOCTYPE html>
+      <html lang="vi">
+      <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Mô phỏng Mèo và Chuột</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+      padding: 20px;
+      background-color: #f0f0f0;
+      border-radius: 10px;
+    }
+    h1 {
+      color: #333;
+    }
+    .container {
+      margin-bottom: 20px;
+    }
+    button {
+      padding: 10px 15px;
+      margin: 5px;
+      border: none;
+      border-radius: 5px;
+      background-color: #007BFF;
+      color: white;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #0056b3;
+    }
+    .status {
+      margin-top: 10px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+<h1>Mô phỏng Mèo và Chuột</h1>
+
+<div class="container">
+  <h2>Mèo:</h2>
+  <p>Tên: Mèo 1</p>
+  <p>Khối lượng: <span id="cat-weight">4.0</span> kg</p>
+  <p>Tốc độ tối đa: 6</p>
+  <button onclick="catchRat()">Bắt Chuột</button>
+  <button onclick="eatRat()">Ăn Chuột</button>
+  <div class="status" id="cat-status"></div>
+</div>
+
+<div class="container">
+  <h2>Chuột:</h2>
+  <p>Tên: Chuột 1</p>
+  <p>Khối lượng: 0.1 kg</p>
+  <p>Tốc độ: 5</p>
+  <div class="status" id="rat-status">Trạng thái: Sống</div>
+</div>
+
+<script>
+  let ratAlive = true;
+  let catWeight = 4.0;
+
+  function catchRat() {
+    if (ratAlive) {
+      alert("Mèo 1 đã bắt được Chuột 1.");
+    } else {
+      alert("Chuột 1 đã chết, không thể bắt được nữa.");
+    }
+  }
+
+  function eatRat() {
+    if (ratAlive) {
+      alert("Chuột 1 vẫn còn sống, không thể ăn.");
+    } else {
+      catWeight += 0.1;
+      document.getElementById("cat-weight").innerText = catWeight.toFixed(2);
+      alert("Mèo 1 đã ăn Chuột 1.");
+    }
+  }
+
+  // Mô phỏng trạng thái chuột
+  function simulateRatDeath() {
+    ratAlive = false;
+    document.getElementById("rat-status").innerText = "Trạng thái: Chết";
+  }
+
+  // Giả lập chuột chết sau 5 giây
+  setTimeout(simulateRatDeath, 5000);
+</script>
+
+</body>
+</html></title>
+</head>
+<body>
+
+</body>
+</html>
