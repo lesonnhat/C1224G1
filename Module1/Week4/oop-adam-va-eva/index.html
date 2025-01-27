@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercises 04: Adam and Eva</title>
+</head>
+<body>
+<script src="human.js"></script>
+<script src="apple.js"></script>
+<script>
+    let adam = new Human("Tuan Anh", true, 60);
+    adam.say(adam.getName() + ": Hello");
+
+    let eva = new Human("Hong", false, 50);
+    eva.say(eva.getName() + ": Hello " + adam.getName());
+
+    let apple = new Apple(10);
+    console.log("Weight Apple: " + apple.getWeight());
+
+    for (let i = apple.getWeight(); i > 0; i--) {
+        if (adam.checkApple(apple)) {
+            adam.eat(apple);
+            console.log("Adam eat Apple: " + apple.getWeight());
+        }
+        if (eva.checkApple(apple)) {
+            eva.eat(apple);
+            console.log("Eva eat Apple: " + apple.getWeight());
+        }
+    }
+</script>
+</body>
+</html>
