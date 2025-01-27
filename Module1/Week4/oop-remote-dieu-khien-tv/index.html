@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mô phỏng TiVi và Remote</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+      padding: 20px;
+      background-color: #f0f0f0;
+      border-radius: 10px;
+    }
+    h1 {
+      color: #333;
+    }
+    .container {
+      margin-bottom: 20px;
+    }
+    button {
+      padding: 10px 15px;
+      margin: 5px;
+      border: none;
+      border-radius: 5px;
+      background-color: #007BFF;
+      color: white;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #0056b3;
+    }
+    .status {
+      margin-top: 10px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+<h1>Mô phỏng TiVi và Remote</h1>
+
+<div class="container">
+  <h2>TiVi:</h2>
+  <p>Trạng thái: <span id="tv-status">Tắt</span></p>
+  <p>Kênh hiện tại: <span id="current-channel">0</span></p>
+  <p>Âm lượng hiện tại: <span id="current-volume">0</span></p>
+  <button onclick="turnOnTV()">Bật TiVi</button>
+  <button onclick="changeChannel(7)">Chuyển đến kênh 7</button>
+  <button onclick="remote.changeChannel(3)">Dùng Remote chuyển đến kênh 3</button>
+  <button onclick="remote.increaseVolume(2)">Tăng âm lượng lên 2 đơn vị</button>
+  <button onclick="turnOffTV()">Tắt TiVi</button>
+</div>
+
+<script>
+  class TV {
+    constructor() {
+      this.currentChannel = 0;
+      this.currentVolume = 0;
+      this.isOn = false;
+    }
+
+    turnOn() {
+      this.isOn = true;
+      updateTVStatus();
+    }
+
+    turnOff() {
+      this.isOn = false;
+      updateTVStatus();
+    }
+
+    changeChannel(channel) {
+      if (this.isOn) {
+        this.currentChannel = channel;
+        updateChannel();
+      }
+    }
+
+    adjustVolume(amount) {
+      if (this.isOn) {
+        this.currentVolume += amount;
+        if (this.currentVolume < 0) this.currentVolume = 0; // Không cho âm lượng âm
+        updateVolume();
+      }
+    }
+  }
+
+  class Remote {
+    constructor(code) {
+      this.code = code;
+    }
+
+    changeChannel(channel) {
+      if (tv.isOn) {
+        tv.changeChannel(channel);
+      }
+    }
+
+    increaseVolume(amount) {
+      if (tv.isOn) {
+        tv.adjustVolume(amount);
+      }
+    }
+
+    decreaseVolume(amount) {
+      if (tv.isOn) {
+        tv.adjustVolume(-amount);
+      }
+    }
+  }
+
+  const tv = new TV();
+  const remote = new Remote("RMT123");
+
+  function turnOnTV() {
+    tv.turnOn();
+    tv.changeChannel(7);  // Chuyển đến kênh 7 khi bật TiVi
+  }
+
+  function turnOffTV() {
+    tv.turnOff();
+  }
+
+  function updateTVStatus() {
+    document.getElementById("tv-status").innerText = tv.isOn ? "Bật" : "Tắt";
+  }
+
+  function updateChannel() {
+    document.getElementById("current-channel").innerText = tv.currentChannel;
+  }
+
+  function updateVolume() {
+    document.getElementById("current-volume").innerText = tv.currentVolume;
+  }
+</script>
+
+</body>
+</html>
