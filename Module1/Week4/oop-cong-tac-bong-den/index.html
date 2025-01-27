@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercises: Switch Button and Electric Lamp</title>
+</head>
+<body>
+<script src="electriclamp.js"></script>
+<script src="switchbutton.js"></script>
+<script>
+  let switchBtn = new SwitchButton();
+  let lamp = new ElectricLamp();
+
+  switchBtn.connectToLamp(lamp);
+  switchBtn.switchOn();
+  console.log("Lamp is: " + lamp.getStatus());
+  switchBtn.switchOff();
+  console.log("Lamp is: " + lamp.getStatus());
+</script>
+</body>
+</html>
