@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Bài Tập Tết 11</title>
+</head>
+<body>
+<script>
+  function checkTriangle(x, y, z) {
+    if (x <= 0 || y <=0 || z <= 0) {
+      alert("Vui lòng nhập số > 0");
+    }
+    else {
+      if (x + y > z && x + z > y && y + z > x) {
+        if (x * x + y * y === z * z
+                || x * x + z * z === y * y
+                || y * y + z * z === x * x) {
+          result = "Đây là 3 cạnh của tam giác vuông";
+        }
+        else {
+          result = "Đây là 3 cạnh của tam giác";
+        }
+      }
+      else {
+        result = "Đây KHÔNG phải 3 cạnh của tam giác";
+      }
+    }
+    return result;
+  }
+
+  document.write(checkTriangle(2, 4, 5));
+</script>
+</body>
+</html>

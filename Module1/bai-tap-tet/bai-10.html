@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài Tập Tết 10</title>
+</head>
+<body>
+<script>
+  function checkString(str) {
+    // Định nghĩa các nguyên âm
+    const vowels = 'aeiou';
+    const result = new Set(); // Sử dụng Set để loại bỏ trùng lặp
+
+    // Chuyển chuỗi về chữ thường để không phân biệt hoa thường
+    str = str.toLowerCase();
+
+    // Duyệt qua từng ký tự trong chuỗi
+    for (let char of str) {
+      if (vowels.includes(char)) {
+        result.add(char); // Thêm ký tự nguyên âm vào Set
+      }
+    }
+
+    // Chuyển Set thành mảng và trả về
+    return Array.from(result);
+  }
+
+  // Ví dụ sử dụng
+  let n = (checkString("Codegym DaNang A")); // Kết quả: ['o', 'e', 'a']
+  document.write(n);
+</script>
+</body>
+</html>

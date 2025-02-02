@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài Tập Tết 5</title>
+</head>
+<body>
+<script>
+    function findMaxNumber(n) {
+        // Kiểm tra xem num có phải là 4 chữ số không
+        if (typeof n !== 'number' || n < 1000 || n > 9999) {
+            return "Số không phải là 4 chữ số.";
+        }
+
+        const numStr = n.toString(); // Chuyển số thành chuỗi
+        let largest = 0;
+
+        // Lặp qua các chỉ số để tạo ra các số 3 chữ số từ số 4 chữ số
+        for (let i = 0; i < 4; i++) {
+            // Tạo số 3 chữ số bằng cách loại bỏ 1 chữ số ở vị trí i
+            const threeDigitNumber = parseInt(numStr.slice(0, i) + numStr.slice(i + 1), 10);
+            if (threeDigitNumber > largest) {
+                largest = threeDigitNumber; // Cập nhật số lớn nhất
+            }
+        }
+
+        return largest; // Trả về số 3 chữ số lớn nhất
+    }
+
+    // Ví dụ sử dụng
+    const input = 8121;
+    const result = findMaxNumber(input);
+    document.write(`Số 3 chữ số lớn nhất từ ${input} là: ${result}`);
+</script>
+</body>
+</html>

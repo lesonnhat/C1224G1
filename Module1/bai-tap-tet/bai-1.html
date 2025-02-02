@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài Tập Tết 1</title>
+</head>
+<body>
+<script>
+    let arr = [];
+    let n = parseInt(prompt("Nhập độ dài mảng n (n <= 20)"));
+    if (n > 20) {
+        alert("Vui lòng nhập n <= 20");
+    }
+    else if (n <= 0) {
+        alert("Vui lòng nhập n là số nguyên dương");
+    }
+    for (let i = 0; i < n; i++) {
+        arr[i] = parseInt(prompt("Nhập số tùy ý: "));
+    }
+    let result = "";
+    for (let j = 0; j < n - 1; j++) {
+        if (arr[j + 1] > arr[j]) {
+            result = " 4OK";
+        }
+        else {
+            result = " NO";
+            break;
+        }
+    }
+    alert("arr = " + arr + result);
+</script>
+</body>
+</html>

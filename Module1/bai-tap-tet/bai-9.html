@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài Tập Tết 9</title>
+</head>
+<body>
+<script>
+  let n = parseInt(prompt("Nhập độ dài mảng:"));
+  if (n <= 0 || isNaN(n)) {
+    alert("Vui lòng nhập số > 0");
+  }
+  else {
+    let arr = [];
+    let result = "OK";
+    for (let i = 0; i < n; i++) {
+      arr[i] = parseInt(prompt("Nhập số bất kỳ:"));
+      if (isNaN(arr[i])) {
+        result = "Vui lòng nhập vào ký tự là số";
+        break;
+      }
+    }
+    for (let i = 0; i < n - 1; i++) {
+      if (arr[i +1] <= arr[i]) {
+        result = "NO";
+        break;
+      }
+    }
+    alert(result);
+  }
+</script>
+</body>
+</html>

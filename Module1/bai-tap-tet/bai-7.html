@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài Tập Tết 7</title>
+</head>
+<body>
+<script>
+  function check(arr) {
+    let result = "";
+    if (typeof arr[0] === 'number') {
+      for (let i = 1; i < arr.length; i++) {
+        if (typeof arr[i] === 'number') {
+          result = "1";
+        } else {
+          result = "-1";
+          break;
+        }
+      }
+    } else if (typeof arr[0] === 'string' && arr[0].length === 1 && /^[A-Za-z]$/.test(arr[0])) {
+      for (let i = 1; i < arr.length; i++) {
+        if (typeof arr[i] === 'string' && arr[i].length === 1 && /^[A-Za-z]$/.test(arr[i])) {
+          result = "0";
+        }
+        else {
+          result = "-1";
+          break;
+        }
+      }
+    }
+    else {
+      result = "-1";
+    }
+    return result;
+  }
+      document.write(check(["a", 2, 3, "d"]));
+</script>
+</body>
+</html>

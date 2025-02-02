@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài Tập Tết 8</title>
+</head>
+<body>
+<script>
+  function checkSoNguyen(arr) {
+    let result;
+    for (let i = 0; i < arr.length; i++) {
+      if (typeof arr[i] === 'number') {
+        result = true;
+      }
+      else {
+        result = false;
+        break;
+      }
+    }
+    return result;
+  }
+
+  let n = checkSoNguyen(["a", 2, 3, 4, 5]);
+  document.write(n);
+</script>
+</body>
+</html>
