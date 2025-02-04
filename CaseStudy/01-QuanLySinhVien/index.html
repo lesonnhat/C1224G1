@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Student Management</title>
+  <style>
+    #logo{
+      width: 100%;
+    }
+    table{
+      background-color: aliceblue;
+    }
+    th{
+      padding: 10px 0;
+    }
+    #id1{
+      font-family: Arial;
+      text-align:center; font-size: 25px;
+      background-color: green;
+      color: white;
+
+    }
+    h1{
+      font-family: "Open Sans";
+      text-align: center; font-size: 45px;
+      color: steelblue;
+      /*background-color: lightskyblue;*/
+      margin: 5px 0px 8px 0px;
+    }
+
+    th , td {
+      text-align: center;
+    }
+    .btn{
+      margin: 3px 2px;
+      border-radius: 5px;
+      padding: 5px;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+    .btn:hover{
+      background-color: gray;
+    }
+    /*button:hover{*/
+    /*  background-color: gray;*/
+    /*}*/
+  </style>
+</head>
+<img src="banner-KTQD.jpg" id="logo">
+<h1> QUẢN LÝ SINH VIÊN </h1>
+<table style=" border: 1px solid black; width: 700px; float: right">
+  <tr style="font-family: Arial; font-size: 15px; background-color: darkblue; color: white">
+    <th>ID</th>
+    <th>Họ tên</th>
+    <th>Ngày sinh</th>
+    <th>Giới tính</th>
+    <th>Lớp</th>
+    <th>Ảnh</th>
+    <th>Tùy chọn</th>
+  </tr>
+  <tbody id="list-student">
+  </tbody>
+</table>
+
+<table border="1" style="width: 500px; height: 300px" ;>
+  <tr id="id1">
+    <th colspan="2"> Thông tin sinh viên</th>
+  </tr>
+
+  <tr>
+    <th>ID</th>
+    <td><input type="number" id="id"></td>
+
+  </tr>
+  <tr>
+    <th>Họ tên</th>
+    <td><input type="text" id="fullname"></td>
+  </tr>
+  <tr>
+    <th>Ngày sinh</th>
+    <td><input type="text" id="date"></td>
+  </tr>
+  <tr>
+    <th>Giới tính</th>
+    <td>
+      <input type="radio" name="gender" value="Nam" checked>Nam
+      <input type="radio" name="gender" value="Nữ">Nữ
+    </td>
+  </tr>
+  <tr>
+    <th>Lớp</th>
+    <td><input type="text" id="grade"></td>
+  </tr>
+  <tr>
+    <th>Ảnh</th>
+    <td><input type="text" id="img"></td>
+  </tr>
+  <tr>
+    <th></th>
+    <td>
+      <button class="btn" style="background-color: limegreen" id="add" onclick="addStudent()">&nbspThêm&nbsp</button>
+      <button class="btn" style="background-color: orange" id="edit" onclick="updateStudent()">&nbspLưu&nbsp</button>
+    </td>
+  </tr>
+</table>
+<script src="main.js"></script>
+</body>
+</html>
