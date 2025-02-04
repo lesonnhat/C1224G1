@@ -148,7 +148,7 @@ function addStudent(){
     let img = document.getElementById('img').value;
 
     if (!validateId(id)) {
-        alert("Mã học viên đã tồn tại hoặc bị bỏ trống.");
+        alert("Mã học viên đã tồn tại hoặc không hợp lệ.");
         return;
     }
 
@@ -160,6 +160,7 @@ function addStudent(){
     let student = new Student(id,name,date,gender,grade,img);
     manage.addStudent(student);
     manage.showList();
+    alert("Thêm mới thành công sinh viên " + name)
     clear();
 }
 
@@ -177,31 +178,43 @@ function deleteStudent(id) {
     manage.showList();
 }
 
-let studentId = 0;
+let studentId = null; // Khởi tạo studentId với null
 function editStudent(id){
     let student = manage.findStudentById(id);
-    document.getElementById('id').value = student.id;
-    document.getElementById('fullname').value = student.fullname;
-    document.getElementById('date').value = student.date;
-    document.querySelector(`input[name="gender"][value="${student.gender}"]`).checked = true;
-    document.getElementById('grade').value = student.grade;
-    document.getElementById('img').value = student.img;
+    if (student) {
+        document.getElementById('id').value = student.id;
+        document.getElementById('fullname').value = student.fullname;
+        document.getElementById('date').value = student.date;
+        document.querySelector(`input[name="gender"][value="${student.gender}"]`).checked = true;
+        document.getElementById('grade').value = student.grade;
+        document.getElementById('img').value = student.img;
 
-    studentId = id;
+        studentId = id; // Cập nhật studentId
+    } else {
+        alert("Không tìm thấy sinh viên.");
+    }
 }
 
 function updateStudent(){
-    let id = document.getElementById('id').value;
-    let name = document.getElementById('fullname').value;
-    let date = document.getElementById('date').value;
-    let gender = document.querySelector('input[name="gender"]:checked').value;
-    let grade = document.getElementById('grade').value;
-    let img = document.getElementById('img').value;
+    if (studentId !== null) { // Kiểm tra studentId có hợp lệ không
+        let id = document.getElementById('id').value;
+        let fullname = document.getElementById('fullname').value;
+        let date = document.getElementById('date').value;
+        let gender = document.querySelector('input[name="gender"]:checked').value;
+        let grade = document.getElementById('grade').value;
+        let img = document.getElementById('img').value;
 
-    let student = manage.findStudentById(studentId);
-    manage.edit(student,id,name,date,gender,grade, img);
-    manage.showList();
-    clear();
+        // Cập nhật thông tin sinh viên
+        let student = manage.findStudentById(studentId);
+        student.edit(id, fullname, date, gender, grade, img);
+
+        manage.showList();
+        alert("Cập nhật thành công sinh viên " + fullname)
+        clear(); // Reset form
+        studentId = null; // Reset studentId
+    } else {
+        alert("Vui lòng chọn sinh viên cần cập nhật.");
+    }
 }
 
 manage.showList();
