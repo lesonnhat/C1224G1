@@ -1,0 +1,86 @@
+table {
+    background-color: aliceblue;
+}
+
+th {
+    padding: 10px 0px;
+    font-family: Arial;
+    font-size: 15px;
+}
+
+td {
+    padding-left: 15px;
+    text-align: left;
+    font-family: Arial;
+    font-size: 15px;
+}
+
+#id1 {
+    font-family: Arial;
+    background-color: steelblue;
+    color: white;
+}
+
+#id2 {
+    font-family: Arial;
+    text-align: center;
+    background-color: steelblue;
+    color: white;
+}
+
+h1 {
+    font-family: "Open Sans";
+    text-align: center;
+    font-size: 45px;
+    color: dodgerblue;
+    /*color: #035898;*/
+    margin: 5px 0px 8px 0px;
+}
+
+.btn {
+    margin: 4px 2px;
+    border-radius: 5px;
+    padding: 5px;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: #333 !important;
+}
+.edit-input {
+    height: 5px; /* Tùy chỉnh chiều cao theo ý muốn */
+    padding: 8px 2px; /* Thêm padding nếu cần */
+    font-size: 14px; /* Tăng kích thước chữ */
+}
+#grade {
+    height: 25px;
+    width: 80px;
+}
+.required {
+    font-size: 12px;
+    color: red;
+    position: absolute;
+    margin: -4px 0px 0px 2px;
+}
+
+.th1 {
+    text-align: left;
+    padding-left: 15px;
+}
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.footer {
+    /*font-size: 15px;*/
+    /*background-color: cadetblue; !* Màu nền cho footer *!*/
+    /*margin: 15px 0 0 0;*/
+    font-family: Arial;
+    color: dimgray;
+    text-align: center; /* Căn giữa nội dung */
+    padding: 10px; /* Khoảng cách bên trong */
+}

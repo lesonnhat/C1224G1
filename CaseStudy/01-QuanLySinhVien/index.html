@@ -2,71 +2,12 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Student Management</title>
-    <style>
-        #logo {
-            width: 100%;
-        }
-
-        table {
-            background-color: aliceblue;
-        }
-
-        th {
-            padding: 10px 0px;
-        }
-
-        #id1 {
-            font-family: Arial;
-            font-size: 15px;
-            /*background-color: royalblue;*/
-            background-color: steelblue;
-            color: white;
-            padding-bottom: 10px;
-        }
-
-        #id2 {
-            font-family: Arial;
-            text-align: center;
-            background-color: dodgerblue;
-            color: white;
-        }
-
-        h1 {
-            font-family: "Open Sans";
-            text-align: center;
-            font-size: 45px;
-            /*color: steelblue;*/
-            color: #035898;
-            margin: 5px 0px 8px 0px;
-        }
-
-        th, td {
-            text-align: center;
-            font-family: Arial;
-            font-size: 15px;
-        }
-
-        .btn {
-            margin: 3px 2px;
-            border-radius: 5px;
-            padding: 5px;
-            color: white;
-            border: none;
-            cursor: pointer;
-        }
-
-        .btn:hover {
-            background-color: #333 !important;
-        }
-        .edit-input {
-            height: 5px; /* Tùy chỉnh chiều cao theo ý muốn */
-            padding: 8px 2px; /* Thêm padding nếu cần */
-            font-size: 14px; /* Tăng kích thước chữ */
-        }
-    </style>
+    <title>Quản lý sinh viên</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="images/favicon.png">
 </head>
-<img src="banner-KTQD.jpg" id="logo">
+<body>
+<img src="images/banner-KTQD.jpg" style="width: 100%;">
 <h1> QUẢN LÝ SINH VIÊN </h1>
 <table style=" border: 1px solid black; width: 700px; float: right">
     <tr id="id1">
@@ -85,35 +26,58 @@
     </tbody>
 </table>
 
-<table border="1" style="width: 500px; height: 300px" ;>
+<table border="1" style="width: 500px; height: 300px">
     <tr id="id2">
         <th style="font-size: 25px" colspan="2"> Thông tin sinh viên</th>
     </tr>
     <tr>
-        <label for="id"><th>ID</th></label>
-        <td><input type="number" id="id" class="edit-input"></td>
+        <th class="th1">
+            ID<span class="required">*</span>
+        </th>
+        <td>
+            <input type="number" id="id" class="edit-input">
+        </td>
     </tr>
     <tr>
-        <th>Họ tên</th>
-        <td><input type="text" id="fullname"class="edit-input"></td>
+        <th class="th1">
+            Họ tên<span class="required">*</span>
+        </th>
+        <td><input type="text" id="fullName" class="edit-input"></td>
     </tr>
     <tr>
-        <th>Ngày sinh</th>
-        <td><input type="text" id="date" class="edit-input"></td>
+        <th class="th1">
+            Ngày sinh<span class="required">*</span>
+        </th>
+        <td><input style="width: 178px; font-family: Arial" type="date" id="date" class="edit-input"></td>
     </tr>
     <tr>
-        <th>Giới tính</th>
+        <th class="th1">
+            Giới tính<span class="required">*</span>
+        </th>
         <td>
             <input type="radio" name="gender" value="Nam" checked>Nam
             <input type="radio" name="gender" value="Nữ">Nữ
         </td>
     </tr>
     <tr>
-        <th>Lớp</th>
-        <td><input type="text" id="grade" class="edit-input"></td>
+        <th class="th1">
+            Lớp<span class="required">*</span>
+        </th>
+        <td>
+<!--            <input type="text" id="grade" class="edit-input">-->
+            <select name="grade" id="grade">
+                <option value="59TH1">59TH1</option>
+                <option value="59TH2">59TH2</option>
+                <option value="59TH3">59TH3</option>
+                <option value="59PM1">59PM1</option>
+                <option value="59PM2">59PM2</option>
+            </select>
+        </td>
     </tr>
     <tr>
-        <th>Link ảnh</th>
+        <th class="th1">
+            Link ảnh<span class="required">*</span>
+        </th>
         <td><input type="text" id="img" class="edit-input"></td>
     </tr>
     <tr>
@@ -126,6 +90,12 @@
         </td>
     </tr>
 </table>
+<div class="clearfix"></div>
+<br><hr>
+<footer class="footer">
+    Bản quyền © <a style="color: royalblue" href="https://maps.app.goo.gl/AXH95ehP4ZyUbo417">Đại Học Kinh Tế Quốc Dân (NEU)</a>
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script src="main.js"></script>
 </body>
 </html>
