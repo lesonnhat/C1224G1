@@ -1,0 +1,26 @@
+h1 {
+    text-align: center;
+    font-family: Roboto;
+}
+table {
+    margin: auto;
+    border-collapse: collapse;
+}
+th, td {
+    border : 1px solid lightslategray;
+    padding: 10px;
+    font-family: Roboto;
+}
+th {
+    background-color: royalblue;
+    color: white;
+}
+hr {
+    width: 30%;
+    margin-top: 30px;
+}
+footer {
+    font-family: Roboto;
+    margin-top: 20px;
+    text-align: center;
+}

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Câu 3</title>
+</head>
+<body>
+<script>
+  function kiemTraThang() {
+    let thangNam = prompt("Nhập tháng, năm (theo định dạng MM/yyyy)");
+
+    const regex = /^(0[1-9]|1[0-2])\/\d{4}$/;
+
+    if (!regex.test(thangNam)) {
+      alert("Định dạng không hợp lệ. Bạn cần nhập đúng định dạng MM/yyyy");
+      return;
+    }
+
+    let [thang, nam] = thangNam.split('/').map(Number);
+    let ngay;
+
+    if (thang === 2) {
+      if (nam % 4 === 0 && nam % 100 !== 0 || nam % 400 === 0) {
+        ngay = 29;
+      }
+      else if (nam % 100 === 0 && nam % 400 !== 0) {
+        ngay = 28;
+      }
+      else {
+        ngay = 28;
+      }
+    }
+    else if (thang === 4 || thang === 6 || thang === 9 || thang === 11) {
+      ngay = 30;
+    }
+    else {
+      ngay = 31;
+    }
+    alert("Tháng " + thang + " năm " + nam + " có " + ngay + " ngày");
+  }
+
+  kiemTraThang();
+</script>
+</body>
+</html>
