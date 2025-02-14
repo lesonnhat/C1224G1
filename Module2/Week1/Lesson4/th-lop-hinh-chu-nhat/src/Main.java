@@ -11,8 +11,8 @@ public class Main {
         double height = sc.nextDouble();
 
         Rectangle rectangle = new Rectangle(width, height);
-        System.out.println("Diện tích = " + rectangle.GetArea());
-        System.out.println("Chu vi = " + rectangle.GetPerimeter());
+        System.out.println("Diện tích = " + rectangle.getArea());
+        System.out.println("Chu vi = " + rectangle.getPerimeter());
         System.out.println(rectangle.display());
 
         sc.close();
