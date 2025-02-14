@@ -10,11 +10,35 @@ public class Circle {
         this.color = color;
     }
 
-    public double getRadius() {
+    // Public
+//    public double getRadius() {
+//        return radius;
+//    }
+//    public double getArea() {
+//        return Math.PI * radius * radius;
+//    }
+
+    // Protected
+//    protected double getRadius() {
+//        return radius;
+//    }
+//    protected double getArea() {
+//        return Math.PI * radius * radius;
+//    }
+
+    // Default
+//    double getRadius() {
+//        return radius;
+//    }
+//    double getArea() {
+//        return Math.PI * radius * radius;
+//    }
+
+    // Private
+    private double getRadius() {
         return radius;
     }
-
-    public double getArea() {
+    private double getArea() {
         return Math.PI * radius * radius;
     }
 }
